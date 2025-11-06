@@ -1,4 +1,4 @@
-content = """# Machine Learning Pose Detection Framework for Suspicious Activity Recognition
+# Machine Learning Pose Detection Framework for Suspicious Activity Recognition
 
 ## 🧠 Overview
 This research project centers on real-time detection of suspicious human activity using machine learning and pose estimation. Suspicious behavior often involves unusual or erratic body movements, which are challenging to detect with traditional rule-based surveillance systems due to computational limitations and lack of adaptability.
@@ -45,11 +45,4 @@ The proposed framework can be deployed in:
 - Public safety and monitoring infrastructure  
 - Automated anomaly detection for security companies  
 - Real-time alerting for critical facilities and smart city applications  
-"""
 
-file_path = "/mnt/data/SuspiciousActivity_PoseDetection_README.md"
-
-with open(file_path, "w") as f:
-    f.write(content)
-
-file_path
