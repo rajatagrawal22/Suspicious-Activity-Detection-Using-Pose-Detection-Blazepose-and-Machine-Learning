@@ -1,20 +1,55 @@
-Suspicious activity is a type of behaviour that can be classified as unusual and
-may indicate illicit intent. Detecting these types of activities using conventional
-methods is a big-time challenge as these methods suffer from computational complexity which limits their real time applicability. This research proposes a machine
-learning pose detection framework for identifying suspicious activity. Suspicious
-activities involve unusual movements of the body which might be an indication of a
-potential threat. By combining pose detection model and classification algorithms
-this framework tries to enhance the surveillance systems in real time. The proposed
-framework combines a pose estimation model, an activity classification model, an
-activity recognition model, and an alert mechanism. The framework proposes to
-use MediaPipe BlazePose pose estimation model to extract body posture features
-in the form of x, y, and z coordinates. These coordinates are later used to create customised geometric features and train the model. The framework proposes
-to create two separate models where the primary model is used to classify if the
-activity is suspicious or not and the second model is used to recognize the activity
-if predicted as suspicious by the first model. A large-scale dataset of 1900 real
-world surveillance videos which consists of 13 different classes is used for this study.
-Once the features were extracted from this data four algorithms XgBoost, Random Forest, LightGBM, and Deep Neural Network (DNN) were evaluated for both
-primary and secondary models. Random Forest was determined to be the optimal
-primary model with an accuracy of 93% and XgBoost was found to be more feasible
-as a secondary model with an accuracy of 70% in predicting activities. The potential users who can be benefited from this framework include security companies,
-private businesses, public safety organizations, etc. .
+content = """# Machine Learning Pose Detection Framework for Suspicious Activity Recognition
+
+## 🧠 Overview
+This research project centers on real-time detection of suspicious human activity using machine learning and pose estimation. Suspicious behavior often involves unusual or erratic body movements, which are challenging to detect with traditional rule-based surveillance systems due to computational limitations and lack of adaptability.
+
+## 🎯 Objective
+To design a computationally efficient, real-time AI framework that improves surveillance systems by:
+1. Detecting anomalous or “suspicious” movements using pose estimation.
+2. Classifying specific types of suspicious activities for further action or alerting.
+
+## 🧩 Framework Components
+
+| Component | Description |
+|-----------|-------------|
+| **Pose Estimation** | Used MediaPipe’s BlazePose model to extract complete 3D body joint information (x, y, z coordinates). |
+| **Feature Engineering** | Custom geometric features created from pose coordinates for improved classification performance. |
+| **Primary Model** | Binary classifier (e.g., Random Forest) determines whether an activity is suspicious or not. |
+| **Secondary Model** | Activity classifier (e.g., XGBoost) identifies the type of suspicious activity if flagged in the primary step. |
+| **Alert Mechanism** | Triggers real-time alerts on detecting specific risky movements. |
+
+## 📊 Dataset
+
+- **Size:** ~1900 surveillance video clips.
+- **Classes:** 13 activity classes (normal & suspicious activities).
+- **Source:** Real-world annotated surveillance footage.
+
+## 🧪 Algorithms Evaluated
+
+| Task | Models Tested | Best Performer |
+|------|---------------|----------------|
+| **Primary Classification** (Suspicious / Not Suspicious) | Random Forest, LightGBM, XGBoost, DNN | **Random Forest — 93% Accuracy** |
+| **Secondary Classification** (Activity Recognition) | Random Forest, LightGBM, XGBoost, DNN | **XGBoost — 70% Accuracy** |
+
+## 🛠️ Tools & Technologies
+
+- **Pose Estimation:** MediaPipe BlazePose  
+- **ML Algorithms:** Random Forest, XGBoost, LightGBM, Deep Neural Networks  
+- **Programming:** Python (NumPy, Pandas, scikit-learn), TensorFlow/Keras  
+- **Visualization:** Matplotlib, Seaborn  
+
+## 🔍 Impact & Applications
+
+The proposed framework can be deployed in:
+- CCTV-based surveillance systems  
+- Public safety and monitoring infrastructure  
+- Automated anomaly detection for security companies  
+- Real-time alerting for critical facilities and smart city applications  
+"""
+
+file_path = "/mnt/data/SuspiciousActivity_PoseDetection_README.md"
+
+with open(file_path, "w") as f:
+    f.write(content)
+
+file_path
